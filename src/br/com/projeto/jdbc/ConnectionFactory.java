@@ -3,7 +3,7 @@ package br.com.projeto.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+import br.com.projeto.jdbc.ConnectionFactory;
 
 public class ConnectionFactory {
     public Connection getConnection() {
