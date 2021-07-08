@@ -91,6 +91,7 @@ public class JFrmCliente extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         ftxtCPF = new javax.swing.JFormattedTextField();
         ftxtUF = new javax.swing.JComboBox<>();
+        btnPesquisarTabela1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         txtNomeTabela = new javax.swing.JTextField();
@@ -124,6 +125,7 @@ public class JFrmCliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Código:");
 
+        ftxtCodigo.setEditable(false);
         ftxtCodigo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         ftxtNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -245,6 +247,13 @@ public class JFrmCliente extends javax.swing.JFrame {
             }
         });
 
+        btnPesquisarTabela1.setText("Pesquisar");
+        btnPesquisarTabela1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarTabela1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pLayout = new javax.swing.GroupLayout(p);
         p.setLayout(pLayout);
         pLayout.setHorizontalGroup(
@@ -264,7 +273,9 @@ public class JFrmCliente extends javax.swing.JFrame {
                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ftxtNome)
                             .addComponent(ftxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(725, 725, 725))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPesquisarTabela1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
                         .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
@@ -273,7 +284,7 @@ public class JFrmCliente extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ftxtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                                 .addComponent(jLabel5))
                             .addGroup(pLayout.createSequentialGroup()
                                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -318,14 +329,15 @@ public class JFrmCliente extends javax.swing.JFrame {
         pLayout.setVerticalGroup(
             pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+                .addContainerGap(63, Short.MAX_VALUE)
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ftxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ftxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(btnPesquisarTabela1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ftxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -370,6 +382,11 @@ public class JFrmCliente extends javax.swing.JFrame {
         txtNomeTabela.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeTabelaActionPerformed(evt);
+            }
+        });
+        txtNomeTabela.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeTabelaKeyPressed(evt);
             }
         });
 
@@ -659,6 +676,34 @@ public class JFrmCliente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnPesquisarTabelaActionPerformed
 
+    private void txtNomeTabelaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeTabelaKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeTabelaKeyPressed
+
+    private void btnPesquisarTabela1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarTabela1ActionPerformed
+        String nome = ftxtNome.getText();
+        Clientes cli = new Clientes();
+        ClientesDAO dao = new ClientesDAO();
+        
+        cli = dao.buscaPorNome(nome);
+        if(cli.getNome() != null){
+        ftxtCodigo.setText(String.valueOf(cli.getId()));
+        ftxtNome.setText(cli.getNome());
+        ftxtRG.setText(cli.getRg());
+        ftxtCPF.setText((cli.getCpf()));
+        ftxtEmail.setText(cli.getEmail());
+        ftxtTelefone.setText(cli.getTelefone());
+        ftxtCelular.setText(cli.getCelular());
+        ftxtCep.setText(cli.getCep());
+        ftxtEndereco.setText(cli.getEndereco());
+        ftxtNumero.setText(String.valueOf(cli.getNumero()));
+        ftxtComplemento.setText(cli.getComplemento());
+        ftxtBairro.setText(cli.getBairro());
+        ftxtCidade.setText(cli.getCidade());
+        ftxtUF.setSelectedItem(cli.getUf());
+        }
+    }//GEN-LAST:event_btnPesquisarTabela1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -699,6 +744,7 @@ public class JFrmCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnPesquisarTabela;
+    private javax.swing.JButton btnPesquisarTabela1;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JTextField ftxtBairro;
     private javax.swing.JFormattedTextField ftxtCPF;
