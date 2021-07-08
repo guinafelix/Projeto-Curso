@@ -7,6 +7,7 @@ package br.com.projeto.view;
 
 import br.com.projeto.dao.ClientesDAO;
 import br.com.projeto.model.Clientes;
+import br.com.projeto.model.Utilitarios;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -61,7 +62,7 @@ public class JFrmCliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        p = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         ftxtCodigo = new javax.swing.JTextField();
         ftxtNome = new javax.swing.JTextField();
@@ -92,8 +93,8 @@ public class JFrmCliente extends javax.swing.JFrame {
         ftxtUF = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtNomeTabela = new javax.swing.JTextField();
+        btnPesquisarTabela = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbClientes = new javax.swing.JTable();
         btnNovo = new javax.swing.JButton();
@@ -244,13 +245,13 @@ public class JFrmCliente extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pLayout = new javax.swing.GroupLayout(p);
+        p.setLayout(pLayout);
+        pLayout.setHorizontalGroup(
+            pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pLayout.createSequentialGroup()
                 .addGap(99, 99, 99)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,15 +259,15 @@ public class JFrmCliente extends javax.swing.JFrame {
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pLayout.createSequentialGroup()
+                        .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ftxtNome)
                             .addComponent(ftxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(725, 725, 725))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
+                        .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
                                 .addComponent(ftxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4)
@@ -274,19 +275,19 @@ public class JFrmCliente extends javax.swing.JFrame {
                                 .addComponent(ftxtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel5))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pLayout.createSequentialGroup()
+                                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel11)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(pLayout.createSequentialGroup()
                                         .addComponent(ftxtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel7))
                                     .addComponent(jLabel15))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pLayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ftxtEndereco))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(pLayout.createSequentialGroup()
                                         .addGap(4, 4, 4)
                                         .addComponent(ftxtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -295,17 +296,17 @@ public class JFrmCliente extends javax.swing.JFrame {
                                         .addComponent(ftxtComplemento)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel13))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pLayout.createSequentialGroup()
+                                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(ftxtRG, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ftxtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(75, 75, 75)
                                 .addComponent(ftxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(ftxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addComponent(jLabel8)
                                     .addGap(4, 4, 4)
@@ -314,19 +315,19 @@ public class JFrmCliente extends javax.swing.JFrame {
                             .addComponent(ftxtUF, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(204, 204, 204))))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        pLayout.setVerticalGroup(
+            pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pLayout.createSequentialGroup()
                 .addContainerGap(64, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ftxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ftxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ftxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
@@ -334,7 +335,7 @@ public class JFrmCliente extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(ftxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ftxtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(ftxtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -342,7 +343,7 @@ public class JFrmCliente extends javax.swing.JFrame {
                     .addComponent(ftxtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ftxtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11)
@@ -352,7 +353,7 @@ public class JFrmCliente extends javax.swing.JFrame {
                     .addComponent(ftxtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ftxtUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(ftxtRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15)
@@ -360,19 +361,24 @@ public class JFrmCliente extends javax.swing.JFrame {
                 .addGap(53, 53, 53))
         );
 
-        jTabbedPane1.addTab("DADOS PESSOAIS", jPanel2);
+        jTabbedPane1.addTab("DADOS PESSOAIS", p);
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel16.setText("Nome:");
 
-        jTextField11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeTabela.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNomeTabela.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                txtNomeTabelaActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Pesquisar");
+        btnPesquisarTabela.setText("Pesquisar");
+        btnPesquisarTabela.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarTabelaActionPerformed(evt);
+            }
+        });
 
         tbClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -400,9 +406,9 @@ public class JFrmCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNomeTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(btnPesquisarTabela)
                 .addContainerGap(727, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
@@ -411,9 +417,9 @@ public class JFrmCliente extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNomeTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16)
-                    .addComponent(jButton1))
+                    .addComponent(btnPesquisarTabela))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -423,6 +429,11 @@ public class JFrmCliente extends javax.swing.JFrame {
 
         btnNovo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnNovo.setText("+ Novo");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnSalvar.setText("Salvar");
@@ -523,9 +534,9 @@ public class JFrmCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ftxtCelularActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void txtNomeTabelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeTabelaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_txtNomeTabelaActionPerformed
 
     private void ftxtUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxtUFActionPerformed
         // TODO add your handling code here:
@@ -602,7 +613,8 @@ public class JFrmCliente extends javax.swing.JFrame {
         
         ClientesDAO dao = new ClientesDAO();
         dao.alterarCliente(cli);       
-        
+        new Utilitarios().limpaTela(p);
+
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void ftxtRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxtRGActionPerformed
@@ -612,6 +624,40 @@ public class JFrmCliente extends javax.swing.JFrame {
     private void ftxtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxtCPFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ftxtCPFActionPerformed
+
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+      new Utilitarios().limpaTela(p);
+    }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnPesquisarTabelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarTabelaActionPerformed
+        String nome = "%"+txtNomeTabela.getText()+"%";
+        
+        ClientesDAO dao = new ClientesDAO();
+        
+        List<Clientes>lista = dao.consultaPorNome(nome);
+        DefaultTableModel dados = (DefaultTableModel)tbClientes.getModel();
+        dados.setNumRows(0);
+        
+        for(Clientes clientes : lista){
+            dados.addRow(new Object[]{
+                clientes.getId(),
+                clientes.getNome(),
+                clientes.getRg(),
+                clientes.getCpf(),
+                clientes.getEmail(),
+                clientes.getTelefone(),
+                clientes.getCelular(),
+                clientes.getCep(),
+                clientes.getEndereco(),
+                clientes.getNumero(),
+                clientes.getComplemento(),
+                clientes.getBairro(),
+                clientes.getCidade(),
+                clientes.getUf()       
+            });
+        } 
+        
+    }//GEN-LAST:event_btnPesquisarTabelaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -652,6 +698,7 @@ public class JFrmCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnNovo;
+    private javax.swing.JButton btnPesquisarTabela;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JTextField ftxtBairro;
     private javax.swing.JFormattedTextField ftxtCPF;
@@ -667,7 +714,6 @@ public class JFrmCliente extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField ftxtRG;
     private javax.swing.JFormattedTextField ftxtTelefone;
     private javax.swing.JComboBox<String> ftxtUF;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -684,12 +730,12 @@ public class JFrmCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField11;
+    private javax.swing.JPanel p;
     private javax.swing.JTable tbClientes;
+    private javax.swing.JTextField txtNomeTabela;
     // End of variables declaration//GEN-END:variables
 }
