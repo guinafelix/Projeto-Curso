@@ -43,7 +43,7 @@ public class Autenticador extends javax.swing.JFrame {
         jTextField1.setBackground(new java.awt.Color(0, 51, 51));
         jTextField1.setFont(new java.awt.Font("MingLiU-ExtB", 0, 24)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("            SUPERMERCADO FORTAL");
+        jTextField1.setText("           SUPERMERCADO FORTAL");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Usuario:");
