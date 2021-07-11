@@ -64,8 +64,9 @@ public class JFrmProdutos extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(0, 102, 102));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(0, 51, 51));
+        jTextField1.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 36)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("Cadastro de Produtos");
 
@@ -273,7 +274,7 @@ public class JFrmProdutos extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
@@ -284,7 +285,7 @@ public class JFrmProdutos extends javax.swing.JFrame {
                         .addComponent(BtnVoltar))
                     .addComponent(btnSalvarProd, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(btnNovoProd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 39, Short.MAX_VALUE))
+                .addGap(0, 31, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BtnVoltar, btnEditarProd, btnExcluirProd, btnNovoProd, btnSalvarProd});

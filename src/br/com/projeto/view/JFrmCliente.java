@@ -111,10 +111,11 @@ public class JFrmCliente extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(0, 51, 51));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 36)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("CADASTRO DE CLIENTES");
+        jTextField1.setText("Cadastro de Clientes");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
