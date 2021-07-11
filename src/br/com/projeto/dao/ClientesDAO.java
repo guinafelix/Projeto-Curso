@@ -92,10 +92,8 @@ public class ClientesDAO {
     public List<Clientes> consultaPorNome(String nome){
         try {
 
-            //1 passo criar a lista
             List<Clientes> lista = new ArrayList<>();
 
-            //2 passo - criar o sql , organizar e executar.
             String sql = "select * from tb_clientes WHERE nome like ?";
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, nome);
@@ -132,7 +130,6 @@ public class ClientesDAO {
         try {
             List<Clientes> lista = new ArrayList<>();
 
-            //2 passo - criar o sql , organizar e executar.
             String sql = "select * from tb_clientes WHERE nome = ?";
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, nome);
