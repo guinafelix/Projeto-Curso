@@ -46,7 +46,7 @@ public class Autenticador extends javax.swing.JFrame {
         jTextField1.setText("           SUPERMERCADO FORTAL");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setText("Usuario:");
+        jLabel1.setText("Usuário:");
 
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
