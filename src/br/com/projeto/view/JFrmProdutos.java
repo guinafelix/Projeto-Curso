@@ -70,6 +70,8 @@ public class JFrmProdutos extends javax.swing.JFrame {
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("Cadastro de Produtos");
 
+        jTabbedPane2.setForeground(new java.awt.Color(0, 0, 255));
+
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Código:");
 
